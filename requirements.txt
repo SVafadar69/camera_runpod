@@ -1,0 +1,5 @@
+runpod
+facenet_pytorch
+torch
+numpy
+Pillow
