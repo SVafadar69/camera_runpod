@@ -16,6 +16,8 @@ _dir = os.getcwd()
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print(f'CUDA Available: {"Yes" if torch.cuda.is_available() else "No"}')
 EMBED_PATH = f"{_dir}/steven_embeddings.pkl"
+import urllib.request
+urllib.request.urlretrieve('https://picsum.photos/800/600', 'downloaded_image.jpg')
 
 
 # -------------------------------------------------------------
@@ -95,7 +97,7 @@ def runpod_inference(event):
         if not job_input:
             return {"error": "No input provided"}
 
-        image_data = job_input.get("image")
+        image_data = job_input.get("image", "downloaded_image.jpg")
         threshold = job_input.get("threshold", 0.3)
 
         if not image_data:
