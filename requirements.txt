@@ -1,5 +1,5 @@
 runpod
 facenet_pytorch
 torch
-numpy
+numpy>=2.0.0
 Pillow
